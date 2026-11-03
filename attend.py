@@ -1,4 +1,5 @@
 # 작업실 수정 테스트
+# 교육 자료대로 실습 중
 import os
 
 FILENAME = "attendance.txt"
