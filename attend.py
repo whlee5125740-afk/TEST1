@@ -1,3 +1,4 @@
+# 작업실 수정 테스트
 import os
 
 FILENAME = "attendance.txt"
@@ -57,4 +58,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    
     
