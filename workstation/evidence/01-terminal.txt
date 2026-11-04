@@ -1,0 +1,87 @@
+Script started on 2026-11-04 21:02:50+09:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="296" LINES="40"]
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation[00m$ [7mpwd[27mpwd
+[?2004l/home/moonlightwh2467/codyssey/workstation
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation[00m$ [7mpwd[27m
+[7mls -la[27m
+[7mmkdir -p practice/archive[27m
+[7mcd practice[27m
+[7mtouch empty.txt[27m
+[7mecho "My first workroom" > memo.txt[27m
+[7mcat memo.txt[27m
+[7mls -la[27m[A[A[A[A[A[A[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation[00m$ pwd
+ls -la
+mkdir -p practice/archive
+cd practice
+touch empty.txt
+echo "My first workroom" > memo.txt
+cat memo.txt
+ls -la
+[?2004l/home/moonlightwh2467/codyssey/workstation
+total 44
+drwxr-xr-x 5 moonlightwh2467 moonlightwh2467 4096 Nov  4 20:48 [0m[01;34m.[0m
+drwxr-xr-x 3 moonlightwh2467 moonlightwh2467 4096 Nov  4 20:48 [01;34m..[0m
+-rwxr-xr-x 1 moonlightwh2467 moonlightwh2467   37 Nov  4 20:48 [01;32m.dockerignore[0m
+-rwxr-xr-x 1 moonlightwh2467 moonlightwh2467   48 Nov  4 20:48 [01;32m.gitignore[0m
+-rwxr-xr-x 1 moonlightwh2467 moonlightwh2467  168 Nov  4 20:48 [01;32mDockerfile[0m
+-rwxr-xr-x 1 moonlightwh2467 moonlightwh2467 7723 Nov  4 20:48 [01;32mREADME.md[0m
+-rwxr-xr-x 1 moonlightwh2467 moonlightwh2467  641 Nov  4 20:48 [01;32mSTART_HERE.md[0m
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 20:48 [01;34mdocs[0m
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:02 [01;34mevidence[0m
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 20:48 [01;34msite[0m
+My first workroom
+total 16
+drwxr-xr-x 3 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:03 [0m[01;34m.[0m
+drwxr-xr-x 6 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:03 [01;34m..[0m
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:03 [01;34marchive[0m
+-rw-r--r-- 1 moonlightwh2467 moonlightwh2467    0 Nov  4 21:03 empty.txt
+-rw-r--r-- 1 moonlightwh2467 moonlightwh2467   18 Nov  4 21:03 memo.txt
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ [7mcp memo.txt memo-copy.txt[27m
+[7mls -l memo.txt memo-copy.txt[27m[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ cp memo.txt memo-copy.txt
+ls -l memo.txt memo-copy.txt
+[?2004l-rw-r--r-- 1 moonlightwh2467 moonlightwh2467 18 Nov  4 21:04 memo-copy.txt
+-rw-r--r-- 1 moonlightwh2467 moonlightwh2467 18 Nov  4 21:03 memo.txt
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ [7mmv memo-copy.txt archive/renamed.txt[27m
+[7mls -la archive[27m
+[7mcat archive/renamed.txt[27m[A[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ mv memo-copy.txt archive/renamed.txt
+ls -la archive
+cat archive/renamed.txt
+[?2004ltotal 12
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:05 [0m[01;34m.[0m
+drwxr-xr-x 3 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:05 [01;34m..[0m
+-rw-r--r-- 1 moonlightwh2467 moonlightwh2467   18 Nov  4 21:04 renamed.txt
+My first workroom
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ [7mrm archive/renamed.txt[27m
+[7mls -la archive[27m
+[7mls -l memo.txt[27m[A[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ rm archive/renamed.txt
+ls -la archive
+ls -l memo.txt
+[?2004ltotal 8
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:05 [0m[01;34m.[0m
+drwxr-xr-x 3 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:05 [01;34m..[0m
+-rw-r--r-- 1 moonlightwh2467 moonlightwh2467 18 Nov  4 21:03 memo.txt
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ [7mchmod 600 memo.txt[27m
+[7mchmod 700 archive[27m
+[7mstat -c '%a %n' memo.txt archive[27m[A[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ chmod 600 memo.txt
+chmod 700 archive
+stat -c '%a %n' memo.txt archive
+[?2004l600 memo.txt
+700 archive
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ [7mchmod 644 memo.txt[27m
+[7mchmod 755 archive[27m
+[7mstat -c '%a %n' memo.txt archive[27m
+[7mls -l memo.txt[27m
+[7mls -ld archive[27m[A[A[A[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ chmod 644 memo.txt
+chmod 755 archive
+stat -c '%a %n' memo.txt archive
+ls -l memo.txt
+ls -ld archive
+[?2004l644 memo.txt
+755 archive
+-rw-r--r-- 1 moonlightwh2467 moonlightwh2467 18 Nov  4 21:03 memo.txt
+drwxr-xr-x 2 moonlightwh2467 moonlightwh2467 4096 Nov  4 21:05 [0m[01;34marchive[0m
+[?2004h]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ [7mcd ..[27m
+[7mexit[27m[A]0;moonlightwh2467@GNIA-C202-F02: ~/codyssey/workstation/practice[01;32mmoonlightwh2467@GNIA-C202-F02[00m:[01;34m~/codyssey/workstation/practice[00m$ cd ..
+exit
+[?2004lexit
+
+Script done on 2026-11-04 21:07:42+09:00 [COMMAND_EXIT_CODE="0"]
