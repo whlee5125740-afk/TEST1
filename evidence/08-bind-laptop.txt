@@ -1,0 +1,12 @@
+Script started on 2026-11-05 12:55:10+09:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="73" LINES="33"]
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker run -d --name jakkie-bind-80[27m[7m8[27m[7m1 -p 127.0.0.1:8081:80 --mount type=bind,source=/home/user01/workstation[27m[7m/[27m[7msite,target=/usr/share/nginx/html,readonly jakkie-workroom:1.0[27m[A[Adocker run -d --name jakkie-bind-8081 -p 127.0.0.1:8081:80 --mount type=bind,source=/home/user01/workstation/site,target=/usr/share/nginx/html,readonly jakkie-workroom:1.0
+[?2004lcd093c42c86104737208e4e7ab07dfaade547aabe88fa468a5cc986882ee96ab
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7msed -i 's/바인드 마운트 변경 확인/ [27m[K[7m노[27m[7m트북에서 실시간 변경 성공/g' site/index.html[27m[Ased -i 's/바인드 마운트 변경 확인/ [K노트북에서 실시간 변경 성공/g' site/index.html
+[?2004l[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mcurl -s http://localhost:8080 | gre[27m[7mp[27m[7m '<p'[27m[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ curl -s http://localhost:8080 | grep '<p'
+[?2004l<body><main><small>AI 올인원 교육 과정 · 개발 입문</small><h1>Jakkie의 개발 작업실</h1>[01;31m[K<p[m[K>경영지도사 업무에 활용할 AI 도구를 배우기 위한 첫 작업 공간입니다.</p><ul><li>터미널: 폴더와 파일을 명령어로 관리합니다.</li><li>Docker: 같은 웹 화면을 다시 실행할 수 있게 준비합니다.</li><li>Git과 GitHub: 작업 내용을 기록하고 공유합니다.</li></ul>[01;31m[K<p[m[K id="status">바인드 마운트 변경 확인</p></main></body></html>
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mcurl -s http://localhost:8081 | gre[27m[7mp[27m[7m '<p'[27m[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ curl -s http://localhost:8081 | grep '<p'
+[?2004l<body><main><small>AI 올인원 교육 과정 · 개발 입문</small><h1>Jakkie의 개발 작업실</h1>[01;31m[K<p[m[K>경영지도사 업무에 활용할 AI 도구를 배우기 위한 첫 작업 공간입니다.</p><ul><li>터미널: 폴더와 파일을 명령어로 관리합니다.</li><li>Docker: 같은 웹 화면을 다시 실행할 수 있게 준비합니다.</li><li>Git과 GitHub: 작업 내용을 기록하고 공유합니다.</li></ul>[01;31m[K<p[m[K id="status">노트북에서 실시간 변경 성공</p></main></body></html>
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-11-05 13:00:22+09:00 [COMMAND_EXIT_CODE="0"]
