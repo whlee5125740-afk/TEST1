@@ -103,3 +103,7 @@ curl -i http://localhost:8080
 
 이 저장소의 Git 작성자 설정과 `origin`의 fetch·push 주소를 실제 CLI 출력으로 확인했습니다.
 [Git 설정 및 원격 저장소 CLI 기록](evidence/12-git-config-remote.md)
+
+## Docker 볼륨과 포트 충돌 추가 증거
+
+[볼륨 보관 위치와 8080 포트 충돌 오류 원문](evidence/13-docker-volume-port.md)

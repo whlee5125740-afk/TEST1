@@ -73,3 +73,9 @@ docker build -t jakkie-location-check:1.0 .
 - **가설과 확인:** VS Code가 `Ctrl+P`를 터미널에 전달하기 전에 파일 검색 단축키로 처리한다고 판단했다. 다시 눌렀을 때도 같은 검색창이 열렸다.
 - **해결:** 새 터미널에서 `docker stop jakkie-attach-laptop`을 실행해 연결을 종료했다. 이때 컨테이너 상태는 `Exited (137)`이었다.
 - **재확인:** 같은 컨테이너를 다시 시작하고 `docker attach`로 연결한 뒤, 컨테이너 셸에서 `exit`를 실행했다. 이번에는 `docker ps -a`에서 `Exited (0)`을 확인했고, `evidence/11-attach-laptop.txt`에 실습 기록을 저장했다.
+
+## 8080 포트 충돌 재현 결과
+
+기존 웹서버가 8080번을 사용 중인 상태에서 같은 포트로 시험용 컨테이너를 실행해 포트 충돌을 확인했습니다.
+
+[실행 명령과 오류 원문](../evidence/13-docker-volume-port.md)
