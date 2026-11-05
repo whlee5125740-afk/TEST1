@@ -35,17 +35,16 @@
 
 | 완료 | 필수 항목 | 수행·검증 결과 | 기록 위치 |
 |---|---|---|---|
-| [ ] | 터미널 기본 조작 | pwd, cd, ls, cat 확인. 나머지 명령은 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
-| [ ] | 파일·폴더 권한 | chmod 전후 권한 비교 기록 확인 필요 | [증거 안내](evidence/README.md) |
+| [x] | 터미널 기본 조작 | 데스크톱에서 위치 확인, 파일·폴더 생성, 복사, 이동, 삭제, 내용 확인 완료 | [터미널 실습](evidence/01-terminal.txt) |
+| [x] | 파일·폴더 권한 | 데스크톱에서 파일 600→644, 폴더 700→755 변경 및 결과 확인 | [권한 실습](evidence/01-terminal.txt) |
 | [x] | Docker 설치·엔진 | 클라이언트·서버 버전 29.9.2 확인 | [환경 정보](evidence/10-laptop-environment.txt) |
-| [ ] | Docker 운영 | 웹서버 실행·중지·재시작 확인. 나머지 필수 명령은 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
-| [ ] | 컨테이너 실습 | 웹 컨테이너 exec·내부 명령·exit 확인. hello-world와 Ubuntu attach는 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
-| [ ] | 커스텀 이미지 | jakkie-workroom:1.0 실행 확인. Dockerfile과 build 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
+| [x] | Docker 운영 | 이미지 다운로드·목록, 컨테이너 목록·로그·자원 사용량, 중지·재시작 확인 | [Docker 실습](evidence/03-docker.txt) |
+| [x] | 컨테이너 실습 | hello-world 정상 종료, Ubuntu 컨테이너에서 exec 실행, 노트북 실습 컨테이너에서 attach 연결 후 exit로 정상 종료(0) 확인 | [hello-world·exec](evidence/03-docker.txt) · [attach](evidence/11-attach-laptop.txt) |
 | [x] | 포트 매핑 | 8080·8081의 웹 화면과 curl 출력 확인 | [두 포트 비교](evidence/08-bind-laptop.txt) |
 | [x] | 바인드 마운트 | site/index.html 수정 후 8081에 변경 반영, 8080과 차이 확인 | [바인드 마운트](evidence/08-bind-laptop.txt) |
 | [x] | 볼륨 영속성 | 기존 컨테이너 삭제 후 새 컨테이너에서 같은 메모 확인 | [볼륨 실습](evidence/09-volume-laptop.txt) |
 | [x] | Git·GitHub·VS Code | VS Code의 Ubuntu 연결·편집, Git 작성자 설정·commit·push 성공 확인 | [노트북 실습](evidence/07-laptop.txt) |
-| [ ] | 트러블슈팅 2건 | Git 작성자 미설정 오류 해결 확인. 문서 작성과 두 번째 사례 확인 필요 | [기록 양식](docs/TROUBLESHOOTING.md) |
+| [x] | 트러블슈팅 2건 | Git 작성자 미설정과 VS Code 단축키 문제의 원인·해결·재확인 기록 | [트러블슈팅](docs/TROUBLESHOOTING.md) |
 
 ## 5. 실행 순서
 압축을 풀고 `workstation` 폴더 전체를 Ubuntu 홈 아래로 복사합니다. 예를 들어 `~/codyssey/workstation`입니다. 실제 압축 해제 위치는 PC마다 다르므로 먼저 `pwd`와 `ls -la`로 확인합니다.
@@ -80,17 +79,17 @@ curl -i http://localhost:8080
 4. 브라우저 주소창 포함 2개 화면과 VS Code 연동 화면을 첨부합니다.
 5. 아래 증거 링크는 파일 저장 후 활성화됩니다. 누락 파일을 만든 것으로 표시하지 않습니다.
 
-[터미널](evidence/01-terminal.txt) · [환경](evidence/02-environment.txt) · [Docker](evidence/03-docker.txt) · [웹·마운트](evidence/04-web.txt) · [볼륨](evidence/05-volume.txt) · [Git](evidence/06-git.txt)
+[터미널](evidence/01-terminal.txt) · [환경](evidence/02-environment.txt) · [Docker](evidence/03-docker.txt) · [웹·마운트](evidence/08-bind-laptop.txt) · [볼륨](evidence/09-volume-laptop.txt) · [노트북 실습](evidence/07-laptop.txt) · [attach 실습](evidence/11-attach-laptop.txt)
 
-![8080 브라우저 증거: 직접 저장 필요](evidence/browser-8080.png)
-![8081 브라우저 증거: 직접 저장 필요](evidence/browser-8081.png)
-![VS Code GitHub 연동 증거: 직접 저장 필요](evidence/vscode-github.png)
+![8080 브라우저 증거](evidence/browser-8080.png)
+![8081 브라우저 증거](evidence/browser-8081.png)
+![VS Code GitHub 연동 증거](evidence/vscode-github.png)
 
 6. 비밀번호·토큰·개인키·인증코드가 없는지 확인 후 GitHub에 올립니다.
-7. 최종 제출 링크: **[사용자 GitHub 저장소 URL 입력 필요]**. 평가자가 접근할 수 있는 권한인지 확인합니다.
+7. 최종 제출 링크: **[workstation GitHub 저장소](https://github.com/whlee5125740-afk/workstation)**. 평가자가 접근할 수 있는 권한인지 확인합니다.
 
 ## 8. 학습 정리 작성란
-실행 후 내 말로 3~5문장을 적습니다. 어떤 도구가 어려웠는지, 어떤 명령으로 원인을 찾았는지, 다시 할 때 바꿀 점을 포함합니다.
+처음에는 터미널과 브라우저 중 어디에 입력해야 하는지 헷갈렸습니다. `curl`로 8080과 8081의 응답을 확인하고, 바인드 마운트로 연결한 8081에서 파일 수정이 바로 반영되는 것을 확인했습니다. `docker ps -a`로 컨테이너의 종료 상태를 확인하는 방법도 익혔습니다. 다음에는 브라우저를 열기 전에 Docker Desktop의 실행 상태와 웹서버 응답부터 확인하겠습니다.
 
 ## 9. 참고
 첨부 미션 요구사항과 참고 README의 필수 구성만 반영했습니다. 선택 보너스와 고급 운영 내용은 제외했습니다.

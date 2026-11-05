@@ -57,3 +57,19 @@ docker build -t jakkie-location-check:1.0 .
 
 ## 추가 참고: Docker 엔진에 연결되지 않음
 `docker --version`은 CLI 설치만 확인한다. `docker info`에서 Server 연결이 실패하면 Docker Desktop 실행 상태, Ubuntu WSL 연동, 현재 Docker context를 확인한다. 원인 확인 없이 Docker 소켓 권한을 777로 바꾸거나 그룹 설정을 수정하지 않는다.
+
+### 노트북 실습에서 해결한 문제 2건
+
+#### 1. Git 작성자 정보가 없어 커밋이 중단됨
+
+- **문제:** 실습 기록을 `git add`로 선택한 뒤 `git commit`을 실행했지만, 작성자 정보를 요구하며 저장이 중단됐다.
+- **가설과 확인:** 노트북의 이 저장소에서 Git 작성자 이름과 이메일을 설정하지 않았다고 판단했다. Git이 작성자 정보를 설정하라는 메시지를 표시했다.
+- **해결:** `git config user.name`과 `git config user.email`로 이 저장소의 작성자 정보를 설정했다. 이메일은 GitHub의 개인정보 보호용 주소를 사용했다.
+- **재확인:** 같은 커밋 명령을 다시 실행해 `9395703`이 생성됐고, 이후 GitHub의 `main` 브랜치에 업로드했다.
+
+#### 2. Docker attach 연결을 끊으려 하자 VS Code 파일 검색창이 열림
+
+- **문제:** `docker attach`로 실습용 컨테이너에 연결한 뒤 `Ctrl+P`를 눌렀더니 VS Code 상단에 파일 검색창이 열렸다.
+- **가설과 확인:** VS Code가 `Ctrl+P`를 터미널에 전달하기 전에 파일 검색 단축키로 처리한다고 판단했다. 다시 눌렀을 때도 같은 검색창이 열렸다.
+- **해결:** 새 터미널에서 `docker stop jakkie-attach-laptop`을 실행해 연결을 종료했다. 이때 컨테이너 상태는 `Exited (137)`이었다.
+- **재확인:** 같은 컨테이너를 다시 시작하고 `docker attach`로 연결한 뒤, 컨테이너 셸에서 `exit`를 실행했다. 이번에는 `docker ps -a`에서 `Exited (0)`을 확인했고, `evidence/11-attach-laptop.txt`에 실습 기록을 저장했다.
