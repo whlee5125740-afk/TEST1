@@ -1,16 +1,16 @@
 # 내 컴퓨터에 개발자용 작업실 꾸미기
 
 ## 1. 프로젝트 소개와 현재 상태
-터미널로 파일을 다루고, Docker로 나의 소개 웹 화면을 실행하며, Git과 GitHub로 결과를 관리하는 과제입니다. 비전공자가 직접 설명할 수 있는 중급 수준으로 정리했습니다. 선택 보너스인 Compose와 SSH 키 설정은 제외했습니다.
+터미널로 파일을 다루고, Docker로 나의 소개 웹 화면을 실행하며, Git과 GitHub로 결과를 관리하는 과제입니다. 선택 보너스인 Compose와 SSH 키 설정은 제외했습니다.
 
-**현재 상태: 주요 Docker 실습과 GitHub 업로드를 확인했습니다.** 노트북의 Ubuntu에서 웹서버 실행·중지·재시작, 컨테이너 내부 명령 실행, 바인드 마운트 변경 반영, 컨테이너 삭제 후 볼륨 자료 유지를 확인했습니다. 실습 기록은 evidence/07-laptop.txt, evidence/08-bind-laptop.txt, evidence/09-volume-laptop.txt에 저장하고 GitHub에 업로드했습니다. 나머지 항목은 증거를 확인하며 정리 중입니다.
+**필수 실습 11개 항목의 결과를 확인하고 제출 자료를 GitHub에 정리했습니다.** 노트북의 Ubuntu에서 웹서버 실행·중지·재시작, 컨테이너 내부 명령 실행, 바인드 마운트 변경 반영, 컨테이너 삭제 후 볼륨 자료 유지를 확인했습니다. 실습 결과와 증거는 [4. 수행 항목과 증거](#4-수행-항목과-증거)에서 확인할 수 있습니다.
 
 ## 2. 실행 환경
 권장 작업 기준은 Windows + WSL2 Ubuntu + Bash입니다. PowerShell에 Linux 명령을 그대로 붙여 넣지 말고 Ubuntu 터미널을 엽니다. 폴더는 `/mnt/c`보다 Ubuntu 홈 아래에 두면 권한 실습을 이해하기 쉽습니다.
 
 | 항목 | 실제 확인값 | 확인 방법 |
 |---|---|---|
-| Windows / WSL | Windows에서 Ubuntu 연결 확인, WSL 버전 추가 확인 필요 | VS Code의 WSL: Ubuntu 표시 |
+| Windows / WSL | Windows에서 Ubuntu 연결 확인, WSL 버전 미확인 | VS Code의 WSL: Ubuntu 표시 |
 | Ubuntu | 26.04.1 LTS | cat /etc/os-release |
 | Bash | 5.3.9 | bash --version |
 | Docker | 클라이언트·서버 모두 29.9.2 | docker --version, docker info |
@@ -27,11 +27,11 @@
 | `site/index.html` | 직접 수정하는 웹 화면 |
 | `docs/RUNBOOK.md` | 한 단계씩 수행하는 CLI 절차 |
 | `docs/INTERVIEW.md` | 별도 문제 제시와 인터뷰형 질의·답변서 |
-| `docs/TROUBLESHOOTING.md` | 문제 확인 및 해결 기록 양식 |
+| `docs/TROUBLESHOOTING.md` | 실제 해결 사례와 재현 실습 기록 |
 | `evidence/` | 실제 출력과 화면 증거를 저장할 위치 |
 
 ## 4. 수행 항목과 증거
-[x]는 실습 결과가 확인된 항목입니다. [ ]는 미실행을 뜻하는 것이 아니라, 전체 수행 여부나 증거를 추가로 확인해야 하는 항목입니다.
+표의 `[x]`는 실습 결과를 확인한 항목입니다.
 
 | 완료 | 필수 항목 | 수행·검증 결과 | 기록 위치 |
 |---|---|---|---|
@@ -72,38 +72,25 @@ curl -i http://localhost:8080
 - 볼륨은 Docker가 관리하는 저장 공간입니다. 연결한 컨테이너를 삭제해도 볼륨 자체를 삭제하지 않으면 파일을 다시 읽을 수 있습니다.
 - Git은 내 PC에서 변경 이력을 기록하고, GitHub는 원격에 저장하고 공유합니다.
 
-## 7. 제출 전 확인
+## 7. 제출 자료
 
-1. 절차서 전 항목을 직접 실행하고 실제 로그를 저장합니다.
-2. README의 환경표·체크표를 실제 결과에 맞게 수정합니다.
-3. [트러블슈팅](docs/TROUBLESHOOTING.md)에 실제 2건 또는 명확히 구분한 재현 실습을 작성합니다.
-4. 브라우저 주소창 포함 2개 화면과 VS Code 연동 화면을 첨부합니다.
-5. 아래 증거 링크는 파일 저장 후 활성화됩니다. 누락 파일을 만든 것으로 표시하지 않습니다.
+실습 명령과 출력, 문제 해결 기록, 브라우저 및 VS Code 화면을 모았습니다.
 
 [터미널](evidence/01-terminal.txt) · [환경](evidence/02-environment.txt) · [Docker](evidence/03-docker.txt) · [웹·마운트](evidence/08-bind-laptop.txt) · [볼륨](evidence/09-volume-laptop.txt) · [노트북 실습](evidence/07-laptop.txt) · [attach 실습](evidence/11-attach-laptop.txt)
+
+[Git 설정 및 원격 저장소 CLI 기록](evidence/12-git-config-remote.md) · [볼륨 보관 위치와 8080 포트 충돌 오류 원문](evidence/13-docker-volume-port.md) · [트러블슈팅](docs/TROUBLESHOOTING.md)
 
 ![8080 브라우저 증거](evidence/browser-8080.png)
 ![8081 브라우저 증거](evidence/browser-8081.png)
 ![VS Code GitHub 연동 증거](evidence/vscode-github.png)
 
-6. 비밀번호·토큰·개인키·인증코드가 없는지 확인 후 GitHub에 올립니다.
-7. 최종 제출 링크: **[workstation GitHub 저장소](https://github.com/whlee5125740-afk/workstation)**. 평가자가 접근할 수 있는 권한인지 확인합니다.
+**최종 제출 주소** [workstation GitHub 저장소](https://github.com/whlee5125740-afk/workstation)
 
-## 8. 학습 정리 작성란
+## 8. 학습 정리
 처음에는 터미널과 브라우저 중 어디에 입력해야 하는지 헷갈렸습니다. `curl`로 8080과 8081의 응답을 확인하고, 바인드 마운트로 연결한 8081에서 파일 수정이 바로 반영되는 것을 확인했습니다. `docker ps -a`로 컨테이너의 종료 상태를 확인하는 방법도 익혔습니다. 다음에는 브라우저를 열기 전에 Docker Desktop의 실행 상태와 웹서버 응답부터 확인하겠습니다.
 
 ## 9. 참고
-첨부 미션 요구사항과 참고 README의 필수 구성만 반영했습니다. 선택 보너스와 고급 운영 내용은 제외했습니다.
 - https://docs.docker.com/engine/storage/bind-mounts/
 - https://docs.docker.com/engine/storage/volumes/
 - https://docs.docker.com/engine/containers/run/
 - https://docs.docker.com/engine/network/port-publishing/
-
-## Git 설정 및 원격 저장소 증거
-
-이 저장소의 Git 작성자 설정과 `origin`의 fetch·push 주소를 실제 CLI 출력으로 확인했습니다.
-[Git 설정 및 원격 저장소 CLI 기록](evidence/12-git-config-remote.md)
-
-## Docker 볼륨과 포트 충돌 추가 증거
-
-[볼륨 보관 위치와 8080 포트 충돌 오류 원문](evidence/13-docker-volume-port.md)
