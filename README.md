@@ -10,7 +10,7 @@
 
 | 항목 | 실제 확인값 | 확인 방법 |
 |---|---|---|
-| Windows / WSL | Windows에서 Ubuntu 연결 확인, WSL 버전 미확인 | VS Code의 WSL: Ubuntu 표시 |
+| Windows / WSL | Windows에서 Ubuntu를 WSL 2로 실행 확인 | `wsl.exe -l -v`에서 Ubuntu의 `VERSION`이 `2` |
 | Ubuntu | 26.04.1 LTS | cat /etc/os-release |
 | Bash | 5.3.9 | bash --version |
 | Docker | 클라이언트·서버 모두 29.9.2 | docker --version, docker info |
