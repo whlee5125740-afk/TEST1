@@ -1,0 +1,66 @@
+Script started on 2026-11-05 12:24:06+09:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="73" LINES="33"]
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mcurl -I http://localhost:8080[27mcurl -I http://localhost:8080
+[?2004lHTTP/1.1 200 OK
+[1mServer[0m: nginx/1.31.8
+[1mDate[0m: Thu, 05 Nov 2026 03:26:36 GMT
+[1mContent-Type[0m: text/html
+[1mContent-Length[0m: 931
+[1mLast-Modified[0m: Thu, 05 Nov 2026 02:18:47 GMT
+[1mConnection[0m: keep-alive
+[1mETag[0m: "6aebe787-3a3"
+[1mAccept-Ranges[0m: bytes
+
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker logs --tail 10 jakkie-web-80[27m[7m8[27m[7m0[27m[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ docker logs --tail 10 jakkie-web-8080
+[?2004l2026/11/05 02:58:54 [notice] 1#1: start worker process 32
+2026/11/05 02:58:54 [notice] 1#1: start worker process 33
+2026/11/05 02:58:54 [notice] 1#1: start worker process 34
+2026/11/05 02:58:54 [notice] 1#1: start worker process 35
+2026/11/05 02:58:54 [notice] 1#1: start worker process 36
+2026/11/05 02:58:54 [notice] 1#1: start worker process 37
+172.17.0.1 - - [05/Nov/2026:03:00:47 +0000] "GET / HTTP/1.1" 200 931 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36" "-"
+172.17.0.1 - - [05/Nov/2026:03:00:47 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36" "-"
+2026/11/05 03:00:47 [error] 30#30: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.17.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+172.17.0.1 - - [05/Nov/2026:03:26:36 +0000] "HEAD / HTTP/1.1" 200 0 "-" "curl/8.18.0" "-"
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker stats --no-stream jakkie-web[27m[7m-[27m[7m8080[27m[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ docker stats --no-stream jakkie-web-8080
+[?2004lCONTAINER ID   NAME              CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ab3df8d0475d   jakkie-web-8080   0.00%     7.703MiB / 7.648GiB   0.10%     5.74kB / 4.54kB   0B / 12.3kB   9
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker stop jakkie-web-8080[27mdocker stop jakkie-web-8080
+[?2004ljakkie-web-8080
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker ps -a[27mdocker ps -a
+[?2004lCONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS                      PORTS     NAMES
+ab3df8d0475d   jakkie-workroom:1.0   "/docker-entrypoint.…"   35 minutes ago   Exited (0) 11 seconds ago             jakkie-web-8080
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker start jakkie-web-8080[27mdocker start jakkie-web-8080
+[?2004ljakkie-web-8080
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ v
+[?2004lv: command not found
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mcurl -I http://localhost:8080[27mcurl -I http://localhost:8080
+[?2004lHTTP/1.1 200 OK
+[1mServer[0m: nginx/1.31.8
+[1mDate[0m: Thu, 05 Nov 2026 03:38:56 GMT
+[1mContent-Type[0m: text/html
+[1mContent-Length[0m: 931
+[1mLast-Modified[0m: Thu, 05 Nov 2026 02:18:47 GMT
+[1mConnection[0m: keep-alive
+[1mETag[0m: "6aebe787-3a3"
+[1mAccept-Ranges[0m: bytes
+
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker exec jakkie-web-8080 ls -l /[27m[7mu[27m[7msr/share/nginx/html[27m[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ docker exec jakkie-web-8080 ls -l /usr/share/nginx/html
+[?2004ltotal 8
+-rw-r--r--    1 root     root           497 Oct 21 17:54 50x.html
+-rwxr-xr-x    1 root     root           931 Nov  5 02:18 index.html
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker exec -it jakkie-web-8080 sh[27mdocker exec -it jakkie-web-8080 sh
+[?2004l/ # [6npwd
+/
+/ # [6ncd /usr/share/nginx/html
+/usr/share/nginx/html # [6nls -l
+total 8
+-rw-r--r--    1 root     root           497 Oct 21 17:54 [0;0m50x.html[m
+-rwxr-xr-x    1 root     root           931 Nov  5 02:18 [1;32mindex.html[m
+/usr/share/nginx/html # [6nexit
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker ps[27mdocker ps
+[?2004lCONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS         PORTS                    NAMES
+ab3df8d0475d   jakkie-workroom:1.0   "/docker-entrypoint.…"   44 minutes ago   Up 7 minutes   127.0.0.1:8080->80/tcp   jakkie-web-8080
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-11-05 12:45:30+09:00 [COMMAND_EXIT_CODE="0"]
