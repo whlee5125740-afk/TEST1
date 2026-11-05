@@ -3,19 +3,19 @@
 ## 1. 프로젝트 소개와 현재 상태
 터미널로 파일을 다루고, Docker로 나의 소개 웹 화면을 실행하며, Git과 GitHub로 결과를 관리하는 과제입니다. 비전공자가 직접 설명할 수 있는 중급 수준으로 정리했습니다. 선택 보너스인 Compose와 SSH 키 설정은 제외했습니다.
 
-**현재는 실행 준비본입니다.** Dockerfile과 웹 파일, 수행 절차는 작성했으나 사용자 PC의 Docker 실행·GitHub 업로드·화면 증거는 미확인입니다. 아래 체크 표는 실제 확인 후에만 변경합니다. 참고 README의 이름·계정·버전·성공 기록은 복사하지 않았습니다.
+**현재 상태: 주요 Docker 실습과 GitHub 업로드를 확인했습니다.** 노트북의 Ubuntu에서 웹서버 실행·중지·재시작, 컨테이너 내부 명령 실행, 바인드 마운트 변경 반영, 컨테이너 삭제 후 볼륨 자료 유지를 확인했습니다. 실습 기록은 evidence/07-laptop.txt, evidence/08-bind-laptop.txt, evidence/09-volume-laptop.txt에 저장하고 GitHub에 업로드했습니다. 나머지 항목은 증거를 확인하며 정리 중입니다.
 
 ## 2. 실행 환경
 권장 작업 기준은 Windows + WSL2 Ubuntu + Bash입니다. PowerShell에 Linux 명령을 그대로 붙여 넣지 말고 Ubuntu 터미널을 엽니다. 폴더는 `/mnt/c`보다 Ubuntu 홈 아래에 두면 권한 실습을 이해하기 쉽습니다.
 
-| 항목 | 실제 확인값 | 확인 명령 |
+| 항목 | 실제 확인값 | 확인 방법 |
 |---|---|---|
-| Windows / WSL | 미확인 | PowerShell: `wsl --status`, `wsl -l -v` |
-| Ubuntu | 미확인 | `cat /etc/os-release` |
-| Bash | 미확인 | `bash --version` |
-| Docker | 미확인 | `docker --version`, `docker info` |
-| Git | 미확인 | `git --version` |
-| 편집기 | VS Code 사용 여부 미확인 | `code .` 후 WSL 연결 표시 확인 |
+| Windows / WSL | Windows에서 Ubuntu 연결 확인, WSL 버전 추가 확인 필요 | VS Code의 WSL: Ubuntu 표시 |
+| Ubuntu | 26.04.1 LTS | cat /etc/os-release |
+| Bash | 5.3.9 | bash --version |
+| Docker | 클라이언트·서버 모두 29.9.2 | docker --version, docker info |
+| Git | 2.53.0 | git --version |
+| 편집기 | VS Code에서 Ubuntu 연결 및 파일 편집 확인 | WSL: Ubuntu 표시와 README 편집 |
 
 준비할 도구: WSL2 Ubuntu, Docker Desktop의 Ubuntu 연동, Git, curl, VS Code와 WSL 확장. 설치되지 않았다면 [PC 준비 안내](docs/PC_SETUP.md)를 먼저 봅니다.
 
@@ -31,21 +31,21 @@
 | `evidence/` | 실제 출력과 화면 증거를 저장할 위치 |
 
 ## 4. 수행 항목과 증거
-아래는 수행 여부를 아직 확정하지 않은 체크리스트입니다. 실행 후 체크하고 실제 파일을 저장합니다. 기록 위치 링크는 증거 폴더 안내로 연결됩니다.
+[x]는 실습 결과가 확인된 항목입니다. [ ]는 미실행을 뜻하는 것이 아니라, 전체 수행 여부나 증거를 추가로 확인해야 하는 항목입니다.
 
-| 완료 | 필수 항목 | 수행·검증 방법 | 기록 위치 |
+| 완료 | 필수 항목 | 수행·검증 결과 | 기록 위치 |
 |---|---|---|---|
-| [ ] | 터미널 기본 조작 | pwd, ls -la, cd, mkdir, cp, mv, rm, cat, touch | [01-terminal.txt 안내](evidence/README.md) |
-| [ ] | 파일·폴더 권한 | chmod 전후 stat, ls -ld 비교 | [01-terminal.txt 안내](evidence/README.md) |
-| [ ] | Docker 설치·엔진 | 버전과 info의 Server 확인 | [02-environment.txt 안내](evidence/README.md) |
-| [ ] | Docker 운영 | pull, images, ps -a, logs, stats, stop | [03-docker.txt 안내](evidence/README.md) |
-| [ ] | 컨테이너 실습 | hello-world, Ubuntu exec·attach·종료 관찰 | [03-docker.txt 안내](evidence/README.md) |
-| [ ] | 커스텀 이미지 | 직접 작성한 Dockerfile build 후 run | [04-web.txt 안내](evidence/README.md) |
-| [ ] | 포트 매핑 | 8080·8081 curl 응답과 브라우저 화면 | [04-web.txt 안내](evidence/README.md) |
-| [ ] | 바인드 마운트 | 호스트 수정 전후 두 포트 비교 | [04-web.txt 안내](evidence/README.md) |
-| [ ] | 볼륨 영속성 | 삭제 전후 같은 파일 내용 확인 | [05-volume.txt 안내](evidence/README.md) |
-| [ ] | Git·GitHub·VS Code | 설정·push·원격 파일·연동 화면 | [06-git.txt 안내](evidence/README.md) |
-| [ ] | 트러블슈팅 2건 | 문제→가설→확인→해결→재확인 | [기록 양식](docs/TROUBLESHOOTING.md) |
+| [ ] | 터미널 기본 조작 | pwd, cd, ls, cat 확인. 나머지 명령은 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
+| [ ] | 파일·폴더 권한 | chmod 전후 권한 비교 기록 확인 필요 | [증거 안내](evidence/README.md) |
+| [x] | Docker 설치·엔진 | 클라이언트·서버 버전 29.9.2 확인 | [환경 정보](evidence/10-laptop-environment.txt) |
+| [ ] | Docker 운영 | 웹서버 실행·중지·재시작 확인. 나머지 필수 명령은 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
+| [ ] | 컨테이너 실습 | 웹 컨테이너 exec·내부 명령·exit 확인. hello-world와 Ubuntu attach는 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
+| [ ] | 커스텀 이미지 | jakkie-workroom:1.0 실행 확인. Dockerfile과 build 기록 확인 필요 | [노트북 실습](evidence/07-laptop.txt) |
+| [x] | 포트 매핑 | 8080·8081의 웹 화면과 curl 출력 확인 | [두 포트 비교](evidence/08-bind-laptop.txt) |
+| [x] | 바인드 마운트 | site/index.html 수정 후 8081에 변경 반영, 8080과 차이 확인 | [바인드 마운트](evidence/08-bind-laptop.txt) |
+| [x] | 볼륨 영속성 | 기존 컨테이너 삭제 후 새 컨테이너에서 같은 메모 확인 | [볼륨 실습](evidence/09-volume-laptop.txt) |
+| [x] | Git·GitHub·VS Code | VS Code의 Ubuntu 연결·편집, Git 작성자 설정·commit·push 성공 확인 | [노트북 실습](evidence/07-laptop.txt) |
+| [ ] | 트러블슈팅 2건 | Git 작성자 미설정 오류 해결 확인. 문서 작성과 두 번째 사례 확인 필요 | [기록 양식](docs/TROUBLESHOOTING.md) |
 
 ## 5. 실행 순서
 압축을 풀고 `workstation` 폴더 전체를 Ubuntu 홈 아래로 복사합니다. 예를 들어 `~/codyssey/workstation`입니다. 실제 압축 해제 위치는 PC마다 다르므로 먼저 `pwd`와 `ls -la`로 확인합니다.
