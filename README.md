@@ -40,6 +40,7 @@
 | [x] | Docker 설치·엔진 | 클라이언트·서버 버전 29.9.2 확인 | [환경 정보](evidence/10-laptop-environment.txt) |
 | [x] | Docker 운영 | 이미지 다운로드·목록, 컨테이너 목록·로그·자원 사용량, 중지·재시작 확인 | [Docker 실습](evidence/03-docker.txt) |
 | [x] | 컨테이너 실습 | hello-world 정상 종료, Ubuntu 컨테이너에서 exec 실행, 노트북 실습 컨테이너에서 attach 연결 후 exit로 정상 종료(0) 확인 | [hello-world·exec](evidence/03-docker.txt) · [attach](evidence/11-attach-laptop.txt) |
+| [x] | 커스텀 이미지 | Dockerfile로 이미지를 만들고, 실행 후 HTTP 200 OK 확인 | [이미지 제작·실행](evidence/03-docker.txt) |
 | [x] | 포트 매핑 | 8080·8081의 웹 화면과 curl 출력 확인 | [두 포트 비교](evidence/08-bind-laptop.txt) |
 | [x] | 바인드 마운트 | site/index.html 수정 후 8081에 변경 반영, 8080과 차이 확인 | [바인드 마운트](evidence/08-bind-laptop.txt) |
 | [x] | 볼륨 영속성 | 기존 컨테이너 삭제 후 새 컨테이너에서 같은 메모 확인 | [볼륨 실습](evidence/09-volume-laptop.txt) |
