@@ -1,0 +1,13 @@
+Script started on 2026-11-05 13:06:44+09:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="73" LINES="33"]
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker volume create jakkie-laptop-[27m[7md[27m[7mata[27m[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ docker volume create jakkie-laptop-data
+[?2004ljakkie-laptop-data
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker run --name jakkie-volume-bef[27m[7mo[27m[7mre --mount type=volume,source=jakkie-laptop-data,target=/data jakkie-wor[27m[7mk[27m[7mroom:1.0 sh -c 'echo "Jakkie laptop volume test" > /data/note.txt; cat /[27m[7md[27m[7mata/note.txt'[27m[A[A[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ docker run --name jakkie-volume-before --mount type=volume,source=jakkie-laptop-data,target=/data jakkie-workroom:1.0 sh -c 'echo "Jakkie laptop volume test" > /data/note.txt; cat /data/note.txt'
+[?2004lJakkie laptop volume test
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker rm jakkie-volume-before[27mdocker rm jakkie-volume-before
+[?2004ljakkie-volume-before
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mdocker run --name jakkie-volume-aft[27m[7me[27m[7mr --mount type=volume,source=jakkie-laptop-data,target=/data jakkie-work[27m[7mr[27m[7moom:1.0 cat /data/note.txt[27m[A[A]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ docker run --name jakkie-volume-after --mount type=volume,source=jakkie-laptop-data,target=/data jakkie-workroom:1.0 cat /data/note.txt
+[?2004lJakkie laptop volume test
+[?2004h]0;user01@DESKTOP-9KE1E9E: ~/workstation[01;32muser01@DESKTOP-9KE1E9E[00m:[01;34m~/workstation[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-11-05 13:10:35+09:00 [COMMAND_EXIT_CODE="0"]
