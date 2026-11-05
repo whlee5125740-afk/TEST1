@@ -97,3 +97,8 @@ curl -i http://localhost:8080
 - https://docs.docker.com/engine/storage/volumes/
 - https://docs.docker.com/engine/containers/run/
 - https://docs.docker.com/engine/network/port-publishing/
+
+## Git 설정 및 원격 저장소 증거
+
+이 저장소의 Git 작성자 설정과 `origin`의 fetch·push 주소를 실제 CLI 출력으로 확인했습니다.
+[Git 설정 및 원격 저장소 CLI 기록](evidence/12-git-config-remote.md)
